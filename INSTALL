@@ -1,0 +1,4 @@
+for install make:
+
+sudo cp -a  ForismaticApplet /usr/share/
+sudo cp forismatic_notify.server /usr/lib/bonobo/servers/ 

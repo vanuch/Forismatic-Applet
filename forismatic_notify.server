@@ -1,0 +1,38 @@
+<oaf_info>
+
+<oaf_server iid="OAFIID:GNOME_ForismaticNotify_Factory"
+                    type="exe"                    location="/usr/share/ForismaticApplet/forismatic_notify.py">
+
+    <oaf_attribute name="repo_ids" type="stringv">
+        <item value="IDL:Bonobo/GenericFactory:1.0" />
+        <item value="IDL:Bonobo/Unknown:1.0" />
+
+    </oaf_attribute>
+    <oaf_attribute name="name" type="string" value="Applet Forismatic Notify Factory" />
+    <oaf_attribute name="name-ru" type="string" value="Фабрика апплета Forismatic Notify" />
+
+    <oaf_attribute name="description" type="string" value="Factory of Forismatic Notify applet" />
+    <oaf_attribute name="description-ru" type="string" value="Фабрика для апплета Forismatic Notify" />
+
+</oaf_server>
+<oaf_server iid="OAFIID:GNOME_ForismaticNotify"
+                    type="factory"                    location="OAFIID:GNOME_ForismaticNotify_Factory">
+    <oaf_attribute name="repo_ids" type="stringv">
+
+        <item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0" />
+        <item value="IDL:Bonobo/Control:1.0" />
+        <item value="IDL:Bonobo/Unknown:1.0" />
+
+    </oaf_attribute>
+    <oaf_attribute name="name" type="string" value="Applet Forismatic Notify" />
+    <oaf_attribute name="name-ru" type="string" value="Апплет Forismatic Notify" />
+
+    <oaf_attribute name="description" type="string" value="Applet Forismatic Notify, show quote from www.forismatic.com using notify-send" />
+    <oaf_attribute name="description-ru" type="string" value="Апплет Forismatic Notify, показывает цитаты с сайта  www.forismatic.com с помощью notify-send" />
+
+    <oaf_attribute name="panel:category" type="string" value="Accessories" />
+    <oaf_attribute name="panel:icon" type="string" value="/usr/share/ForismaticApplet/forismatic_icon_16.png" />
+
+</oaf_server>
+</oaf_info>
+
