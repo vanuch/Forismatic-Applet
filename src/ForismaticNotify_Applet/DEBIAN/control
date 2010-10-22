@@ -1,0 +1,9 @@
+Package: forismatic-applet
+Version: 0.7b-1
+Section: misc
+Architecture: all
+Depends: python, gnome-panel
+Maintainer: vanuch <goncharov.ivan.v@gamil.com>
+Description: Show quotes from froismatic.com
+ Small gnome panel applet on python. 
+ Show random quote from site forismatic.com

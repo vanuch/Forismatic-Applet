@@ -18,7 +18,7 @@ DefaultQuoteText = u"Лишь те, кто отваживаются потерп
 DefaultQuoteLink = "http://ru.forismatic.com/e91bb392d1/"
 DefaultQuoteAuthor = "       --Роберт Кеннеди"
 DefaultLanguage = 'Russian'
-theme_id = {"Blue" : "0","Black" : "1"}
+theme_id = {"Blue" : "0", "Black" : "1", "White" : 2}
 lang_id = {"Russian" : "1","English" : "0"} 
 
 

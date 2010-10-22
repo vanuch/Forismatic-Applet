@@ -172,6 +172,9 @@
       <row>
         <col id="0" translatable="yes">Black</col>
       </row>
+      <row>
+        <col id="0" translatable="yes">White</col>
+      </row>
     </data>
   </object>
   <object class="GtkAdjustment" id="TimeAdjustment">

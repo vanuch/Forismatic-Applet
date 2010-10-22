@@ -28,9 +28,9 @@ import webbrowser
 
 #path = os.getcwd()
 #print "folder path: %s"%path
-#if  path =="/":
-	#path = '/home/vanuch/Documents/python/ForismaticApplet/'
-path = '/usr/share/ForismaticApplet'
+
+path = '/usr/share/ForismaticApplet'  #work
+#path = '/home/vanuch/Documents/python/ForismaticApplet/src/ForismaticNotify_Applet/usr/share/ForismaticApplet/' #in windows
 
 __version__ = "0.7b"
 __license__ = "GNU General Public License v.3"
@@ -198,11 +198,13 @@ class GnomeForismaticApplet(GnomeAppletSkeleton):
 		os.path.join(self.theme_path,'icon_refresh_15.png')
 		self.pixbuff = gtk.gdk.pixbuf_new_from_file(self.refresh_path)
 		self.image.set_from_pixbuf(self.pixbuff)
+		self.applet.show_all()
 		#get new quote
 		self.forism.save_quote() #remember last quote for next redirect to site
 		#return old quote:
 		self.pixbuff = gtk.gdk.pixbuf_new_from_file(self.icon_path)
 		self.image.set_from_pixbuf(self.pixbuff)
+		self.applet.show_all()
 		#show quote:
 		self.quote = self.forism.get_quote()
 		self.forism.show_notify(self.quote)
@@ -231,9 +233,9 @@ class GnomeForismaticApplet(GnomeAppletSkeleton):
 
 	def on_ppm_about(self, event, data=None):
 		"""Callback for pop-up menu item 'About', show About dialog"""
-		self.icon_path=\
+		self.about_path=\
 		os.path.join(self.theme_path,'forismatic_icon_100.png')
-		self.pixbuf=gtk.gdk.pixbuf_new_from_file(self.icon_path)
+		self.about_pixbuf=gtk.gdk.pixbuf_new_from_file(self.about_path)
 		msg_applet_name = u"Forismatic Notify"
 		msg_applet_description = \
 		u"""Forismatic applet for Python powered GNOME applet"""
@@ -246,7 +248,7 @@ class GnomeForismaticApplet(GnomeAppletSkeleton):
 					   [__author__,],   # programming
 						msg_applet_documentation,   # documentation
 						None,   # translating
-						self.pixbuf,
+						self.about_pixbuf,
 					   ).show()
 	
 	def init_ppmenu(self):
@@ -277,6 +279,7 @@ class GnomeForismaticApplet(GnomeAppletSkeleton):
 	
 	def show_preferences(self,*arguments):
 		"""Show Preference windows"""	
+		print path
 		self.pref = Preference.Preference(self.applet, path)
 
 	def show_quote_on_site(self, *arguments):
@@ -326,6 +329,7 @@ def run_in_panel():
 							   
 
 def run_in_window():
+	
 	main_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 	main_window.set_title("GNOME Applet Forismatic")
 	main_window.connect("destroy", gtk.main_quit)
